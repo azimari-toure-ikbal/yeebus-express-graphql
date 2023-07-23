@@ -4,6 +4,7 @@ import { expressMiddleware } from "@apollo/server/express4";
 import { config } from "dotenv";
 import { typeDefs } from "./graphql/Types/types.ts";
 import { resolvers } from "./graphql/Resolver/resolvers.ts";
+import cors from "cors";
 import bodyParser from "body-parser";
 
 config();
@@ -18,7 +19,7 @@ const server = new ApolloServer({
 
 await server.start();
 
-app.use(bodyParser.json(), expressMiddleware(server));
+app.use(cors(), bodyParser.json(), expressMiddleware(server));
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
