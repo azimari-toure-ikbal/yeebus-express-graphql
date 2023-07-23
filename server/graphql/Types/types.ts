@@ -6,7 +6,7 @@ export const typeDefs = `#graphql
         lineStops: [LineStop!]!
         schedules: [Schedule!]!
         stops: [Stop!]!
-        
+
     },
 
     type Company {
@@ -57,15 +57,15 @@ export const typeDefs = `#graphql
     type Stop {
         stopId: ID!
         name: String!
-        state: StopState!
+        # state: StopState!
         latitude: Float!
         longitude: Float!
         isAccessible: Boolean!
         isOkForDisabled: Boolean
     }
 
-    type StopState {
-        stopState: String!
-    }
+    # type StopState {
+    #     stopState: String!
+    # }
 
 `;

@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const baseUrl = "http://localhost:8080/api/";
+const baseUrl = "http://localhost:8080/api";
 
 export const resolvers = {
   Query: {
     companies: async () => {
-      const { data, status } = await axios.get(`${baseUrl}companies`);
+      const { data, status } = await axios.get(`${baseUrl}/companies`);
 
       if (status !== 200) {
         throw new Error("Error fetching companies");
@@ -14,7 +14,7 @@ export const resolvers = {
       return data;
     },
     buses: async () => {
-      const { data, status } = await axios.get(`${baseUrl}buses`);
+      const { data, status } = await axios.get(`${baseUrl}/buses`);
 
       if (status !== 200) {
         throw new Error("Error fetching buses");
@@ -23,7 +23,7 @@ export const resolvers = {
       return data;
     },
     lines: async () => {
-      const { data, status } = await axios.get(`${baseUrl}lines`);
+      const { data, status } = await axios.get(`${baseUrl}/lines`);
 
       if (status !== 200) {
         throw new Error("Error fetching lines");
@@ -32,7 +32,7 @@ export const resolvers = {
       return data;
     },
     lineStops: async () => {
-      const { data, status } = await axios.get(`${baseUrl}lineStops`);
+      const { data, status } = await axios.get(`${baseUrl}/lineStops`);
 
       if (status !== 200) {
         throw new Error("Error fetching lineStops");
@@ -41,7 +41,7 @@ export const resolvers = {
       return data;
     },
     schedules: async () => {
-      const { data, status } = await axios.get(`${baseUrl}schedules`);
+      const { data, status } = await axios.get(`${baseUrl}/schedules`);
 
       if (status !== 200) {
         throw new Error("Error fetching schedules");
@@ -50,7 +50,7 @@ export const resolvers = {
       return data;
     },
     stops: async () => {
-      const { data, status } = await axios.get(`${baseUrl}stops`);
+      const { data, status } = await axios.get(`${baseUrl}/stops`);
 
       if (status !== 200) {
         throw new Error("Error fetching stops");
