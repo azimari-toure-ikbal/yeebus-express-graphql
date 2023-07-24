@@ -21,10 +21,6 @@ await server.start();
 
 app.use(cors(), bodyParser.json(), expressMiddleware(server));
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-
 app.listen(port, () => {
   console.log(`Server listening on port ${port} 🚀`);
 });
