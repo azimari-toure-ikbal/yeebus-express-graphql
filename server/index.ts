@@ -13,11 +13,16 @@ import {
   scheduleResolvers,
   stopResolvers,
 } from "./graphql/helper/mapRelatedExports.ts";
+import { 
+  itineraryResolvers, 
+  positionResolvers,
+  ItineratiesInputs,
+  itinerariesTypes,
+  itinerariesQueries
+} from "./graphql/helper/itinerariesRelatedExports.ts";
 import cors from "cors";
 import bodyParser from "body-parser";
 import path from "path";
-import { itineraryResolvers } from "./graphql/Resolver/gericCrud/itineraryResolvers.ts";
-import { positionResolvers } from "./graphql/Resolver/gericCrud/positionResolvers.ts";
 
 config();
 
@@ -30,6 +35,9 @@ const server = new ApolloServer({
     GenericCrudQueries,
     GenericCrudMutations,
     MapRelatedTypes,
+    ItineratiesInputs,
+    itinerariesTypes,
+    itinerariesQueries
   ],
   resolvers: [
     companyResolvers,

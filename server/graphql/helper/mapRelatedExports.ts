@@ -17,5 +17,5 @@ export {
   busResolvers,
   lineResolvers,
   scheduleResolvers,
-  stopResolvers,
+  stopResolvers
 };
