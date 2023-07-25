@@ -23,5 +23,7 @@ export const GenericCrudQueries = `#graphql
         schedules: [Schedule!]
         schedulesByLine(lineId: ID!): [Schedule!]
 
+        # Itineraries Query
+        itineraries(input: ItineraryInput): [Itinerary!]
     }
 `;

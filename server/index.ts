@@ -4,9 +4,9 @@ import { expressMiddleware } from "@apollo/server/express4";
 import { config } from "dotenv";
 import {
   MapRelatedTypes,
-  MapRelatedInputs,
-  MapRelatedQueries,
-  MapRelatedMutations,
+  GenericCrudInputs,
+  GenericCrudQueries,
+  GenericCrudMutations,
   companyResolvers,
   busResolvers,
   lineResolvers,
@@ -15,6 +15,9 @@ import {
 } from "./graphql/helper/mapRelatedExports.ts";
 import cors from "cors";
 import bodyParser from "body-parser";
+import path from "path";
+import { itineraryResolvers } from "./graphql/Resolver/gericCrud/itineraryResolvers.ts";
+import { positionResolvers } from "./graphql/Resolver/gericCrud/positionResolvers.ts";
 
 config();
 
@@ -23,10 +26,10 @@ const app = express();
 
 const server = new ApolloServer({
   typeDefs: [
-    MapRelatedInputs,
+    GenericCrudInputs,
+    GenericCrudQueries,
+    GenericCrudMutations,
     MapRelatedTypes,
-    MapRelatedQueries,
-    MapRelatedMutations,
   ],
   resolvers: [
     companyResolvers,
@@ -34,7 +37,20 @@ const server = new ApolloServer({
     lineResolvers,
     scheduleResolvers,
     stopResolvers,
+    itineraryResolvers,
+    positionResolvers
   ],
+  status400ForVariableCoercionErrors: true,
+  // formatError: (error) => {
+  //   // console.log(error);
+  //   return {
+  //     message: error.message,
+  //     extensions: {
+  //       code: error.extensions?.code,
+  //       timestamp: error.extensions?.timestamp,
+  //     },
+  //   };
+  // },
 });
 
 await server.start();
