@@ -1,6 +1,6 @@
 export const ItineratiesInputs = `#graphql
     input PlaceInput {
-        address: String!
+        name: String!
         latitude: Float!
         longitude: Float!
     }

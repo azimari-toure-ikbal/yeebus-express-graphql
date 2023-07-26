@@ -32,8 +32,8 @@ export const MapRelatedTypes = `#graphql
         state: StopState
         latitude: Float
         longitude: Float
-        isAccessible: Boolean
-        isOkForDisabled: Boolean
+        accessible: Boolean
+        okForDisabled: Boolean
         lines: [Line!]
     }
 

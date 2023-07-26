@@ -1,9 +1,14 @@
 export const positionResolvers = {
   Position: {
-    __resolveType(obj: any, contextValue: any, info: any) {
+    __resolveType(obj, contextValue, info) {
+
       if (obj.longitude && obj.latitude) {
-        if (obj.state) return "Stop";
-        else return "Place";
+
+        if (obj.okForDisabled != null){ 
+			return "Stop";
+		}
+        else 
+			return "Place";
       }
 
       return null;
