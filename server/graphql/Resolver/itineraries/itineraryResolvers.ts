@@ -1,5 +1,4 @@
 import axios from "axios";
-import { config } from "dotenv";
 
 const baseUrl = "http://localhost:8081/api/itinerary";
 

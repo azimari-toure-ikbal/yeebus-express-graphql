@@ -1,0 +1,9 @@
+type User {
+    name: String!
+    cars: [Car!] @relation
+}
+
+type Car {
+    plate: String!
+    owner: User!
+}

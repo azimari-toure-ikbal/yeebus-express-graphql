@@ -13,16 +13,15 @@ import {
   scheduleResolvers,
   stopResolvers,
 } from "./graphql/helper/mapRelatedExports.ts";
-import { 
-  itineraryResolvers, 
+import {
+  itineraryResolvers,
   positionResolvers,
   ItineratiesInputs,
   itinerariesTypes,
-  itinerariesQueries
+  itinerariesQueries,
 } from "./graphql/helper/itinerariesRelatedExports.ts";
 import cors from "cors";
 import bodyParser from "body-parser";
-import path from "path";
 
 config();
 
@@ -37,7 +36,7 @@ const server = new ApolloServer({
     MapRelatedTypes,
     ItineratiesInputs,
     itinerariesTypes,
-    itinerariesQueries
+    itinerariesQueries,
   ],
   resolvers: [
     companyResolvers,
@@ -46,7 +45,7 @@ const server = new ApolloServer({
     scheduleResolvers,
     stopResolvers,
     itineraryResolvers,
-    positionResolvers
+    positionResolvers,
   ],
   status400ForVariableCoercionErrors: true,
   // formatError: (error) => {

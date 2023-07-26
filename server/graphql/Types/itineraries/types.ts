@@ -1,18 +1,21 @@
 export const itinerariesTypes = `#graphql
 	type Place {
-        name: String
+        address: String
         latitude: Float
         longitude: Float
+        name: String
+        OkForDisabled: Boolean
+        lines: [Line!]
     }
 
-    #type Stop {
+    # type Stop {
     #    address: String
     #    latitude: Float
     #    longitude: Float
     #    name: String
-    #    isOkForDisabled: Boolean
+    #    OkForDisabled: Boolean
     #    lines: [Line!]
-    #}
+    # }
 
     union Position = Place | Stop
 

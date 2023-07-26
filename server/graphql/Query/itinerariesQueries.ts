@@ -1,6 +1,6 @@
 export const itinerariesQueries = `#graphql
 	type Query {
 		# Itineraries Query
-		itineraries(input: ItineraryInput): [Itinerary!]
+		itineraries(input: ItineraryInput!): [Itinerary!]
 	}
 `;
